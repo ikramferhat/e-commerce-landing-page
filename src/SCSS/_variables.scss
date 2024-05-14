@@ -1,0 +1,21 @@
+$fontFamily: 'Noto Sans Arabic', sans-serif;
+
+$media-bp: (
+    "xs": 0px,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px
+);
+
+:root {
+    --color-transparent: transparent;
+    --color-grey1: #7c848a;
+    --color-grey2: #c5c8cd;
+    --color-grey3: #f2f2f2;
+    --color-beige: #c2c4ab;
+    --color-white: #ffffff;
+    --color-black1: #000000;
+    --color-black2: #171b24;
+}

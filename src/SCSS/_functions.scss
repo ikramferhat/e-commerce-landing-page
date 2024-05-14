@@ -1,0 +1,47 @@
+@use "variables";
+
+$grid-columns: 12;
+
+%mainClassFont {
+    font-family: variables.$fontFamily;
+}
+%mainClassDivider {
+    border-bottom: 1px solid var(--color-grey2);
+}
+%mainClassp-m-0 {
+    padding: 0px;
+    margin: 0px;
+}
+@mixin media-breakpoint ($key, $val) {
+    @media (min-width: $val) {
+        @for $i from 1 through $grid-columns {
+            .col-#{$key}-#{$i} {
+              box-sizing: border-box;
+              flex-grow: 0;
+              width: percentage($i / $grid-columns);
+            }
+        }
+    }
+}
+@mixin flex ($dir, $justify, $align) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin position ($position, $top, $left, $right, $bottom) {
+    position: $position;
+    top: $top;
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+}
+@mixin btnColor ($bg, $cl) {  
+    background-color: $bg;
+    color: $cl;
+}
+@mixin keyframes($name){
+    @keyframes #{$name}{
+        @content;
+    }
+}

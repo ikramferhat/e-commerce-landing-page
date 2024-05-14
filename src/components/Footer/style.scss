@@ -1,0 +1,66 @@
+@use "../../SCSS/functions";
+@import "../../SCSS/base";
+
+footer {
+    background-color: black;
+    .top-wrapper {
+        background-color: var(--color-grey3);
+    }
+    .container {
+        background-color: transparent;
+        .form-conatiner {
+            width: 100%;
+            @include functions.flex(row, space-between, center);
+            @media (max-width: 768px) {
+                @include functions.flex(column, space-between, flex-start);
+            }
+        }
+        .custom-search {
+            position: relative;
+            width: 300px;
+            margin: 20px 0;
+            input {
+              width: 100%;
+              border: 1px solid #ccc;
+              border-radius: 100px;
+              padding: 10px 100px 10px 20px; 
+              box-sizing: border-box;
+              outline: none;
+              line-height: 1;
+            }
+           .black {
+              position: absolute;
+              right: 8px; 
+              top: 8px;
+              bottom: 8px;
+              margin: 0;
+            }
+        }
+    }
+    .middle {
+        h1 {
+            @extend .title2;
+            color: var(--color-white);
+        }
+        p {
+            @extend .text-base;
+            color: var(--color-white);
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 2;
+        }
+    }
+    .bottom {
+        border-top: 1px solid var(--color-black2);
+        margin-top: 50px;
+        padding: 10px 0;
+        @include functions.flex(row, space-between, center);
+        .social {
+            font-size: 1.2rem;
+            color: var(--color-white);
+            svg {
+                margin: 0 10px;
+            }
+        }
+    }
+} 

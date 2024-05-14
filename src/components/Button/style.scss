@@ -1,0 +1,45 @@
+@use "../../SCSS/functions";
+
+button {
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    transition: all 0.3s;
+    @include functions.flex(row, center, center);
+    &.btn {
+      &.black {
+        @include functions.btnColor(var(--color-black1), var(--color-white));
+        &:hover {
+            @include functions.btnColor(var(--color-black2), var(--color-white));
+          }
+      }
+      &.outline {
+        @include functions.btnColor(var(--color-transparent), var(--color-white));
+        border: 1px solid var(--color-white);
+      }
+      text-transform: capitalize;
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      .arrow {
+        margin-left: 10px;
+        transition: all 0.3s;
+        &.rotate {
+          transform: translate(0, 0) rotate(-45deg);
+        }
+      }   
+      &:hover {
+        .arrow {
+          transform: translateX(5px);
+          &.rotate {
+            transform: translate(5px, -5px) rotate(-45deg);
+          }
+        }   
+      }
+    }
+    &.circle {
+      background: var(--color-white);
+    }
+}

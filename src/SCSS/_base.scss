@@ -1,0 +1,55 @@
+body {
+  background-color: var(--color-white);
+  overflow-x: hidden;
+  .App {
+    @extend %mainClassp-m-0;
+    @extend %mainClassFont;
+    .main-container {
+      margin-top: 65px;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      @extend %mainClassp-m-0;
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+section {
+    padding: 4rem 0;
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--color-white);
+    box-sizing: border-box;
+    @media (max-width: 768px) {
+      padding: 1rem;
+    }
+}
+.title1, .title2 {
+    color: var(--color-black1);
+    line-height: 1.5;
+}
+.text-base {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: var(--color-grey1);
+}
+.title1 {
+    font-size: 13px;
+    display: block;
+    background-color: var(--color-grey3);
+    padding: 3px 10px !important;
+    border-radius: 15px;
+}
+.title2 {
+    font-size: 1.7rem;
+    font-family: 'Playfair Display', serif;
+    text-transform: capitalize;
+    @media (max-width: 600px) {
+      font-size: 1.4rem;
+    }
+}

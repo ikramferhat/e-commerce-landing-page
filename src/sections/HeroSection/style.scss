@@ -1,0 +1,30 @@
+@use "../../SCSS/functions";
+
+#hero {
+    .top-section {
+        @include functions.flex(column, center, center);
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto;
+        .text-base {
+            max-width: 700px;
+        }
+        .title2 {
+            margin: 10px 0;
+            font-size: 2.5rem;
+        }
+        .btn-container {
+            margin-top: 30px;
+        }
+    }
+    .hero-image {
+        @include functions.position(relative, null, calc(-50vw + 50%), null, null);
+        width: 100vw;
+        margin-top: 60px;
+        background-color: rgb(255, 255, 255);
+        img {   
+            width: 100%;
+            height: unset; 
+        }
+    }
+}

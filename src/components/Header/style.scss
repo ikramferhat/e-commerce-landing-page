@@ -1,0 +1,119 @@
+@use "../../SCSS/functions";
+
+nav {
+    @include functions.position(fixed, 0, 0, 0, null);
+    width: 100%;
+    background-color: transparent;
+    z-index: 2;
+    box-shadow: 0 10px 15px rgba(161, 160, 160, 0.1);
+    .navbar {
+        position: relative;
+        padding: 20px 5%;
+        background-color: var(--color-white);
+        text-transform: capitalize;
+        z-index: 2;
+    }
+}
+.navbar, .nav-liste, .nav-icons, .nav-logo {
+    @include functions.flex(row, space-between, center);
+}
+.nav-logo {
+    h3 {
+       font-size: 1.2rem;
+    }
+    svg {
+        display: none;
+        margin-right: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 1.1rem;
+        @media (max-width: 992px) {
+            display: block;
+        }
+    }
+}
+.nav-liste a,
+.nav-icons svg,
+.nav-logo h3,
+.nav-logo svg {
+    color: var(--color-black2);
+}
+.nav-liste a, .nav-icons svg {
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0px 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.nav-logo svg {
+    z-index: 10;
+}
+.active {
+    color: var(--color-beige) !important;
+}
+.nav-liste a, .nav-icons svg, .nav-logo svg {
+    &:hover {
+        color: var(--color-beige);
+    }
+}
+.searchcontainer {
+    @include functions.flex(row, space-between, center);
+    @include functions.position(absolute, 100%, 0, 0, null);
+    max-width: 936px;
+    margin: 0 auto;
+    background-color: var(--color-beige);
+    padding: 0 5px;
+    transition: transform 0.5s ease;
+    z-index: 1;
+    input {
+        width: 80%;
+        padding: 10px;
+        background-color: transparent;
+        display: block;
+        width: 100%;
+        border: 0;
+        outline: none;
+    };
+    span {
+        display: block;
+        cursor: pointer;
+        padding: 5px;
+    }
+    &.hidden {
+        transform: translateY(-100%);
+    }
+    &.visible {
+        transform: translateY(0%);
+    }
+}
+.sidebarOverlay {
+    @include functions.position(fixed, 0, 0, 0, 0);
+    z-index: 3;
+    background-color: rgba(0,0,0,.5);
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    animation: fade .5s;
+    @include functions.keyframes(fade){
+      0% {opacity: 0}
+      100% {opacity: 1}
+    }
+}
+.nav-liste {
+    @media (max-width: 992px) {
+        @include functions.position(fixed, 0, null, 0, null);
+        @include functions.flex(column, center, null);
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: rgb(0, 0, 0);
+        transition: .5s;
+        &.visible {
+             transform: translateX(0%);
+        }
+        &.hidden {
+            transform: translateX(-100%);
+       }
+    }
+}
